@@ -9,6 +9,10 @@ public class MyDate {
 		this.yyyy = yyyy;
 		this.mm = mm;
 		this.dd = dd;
+		
+		//only accepting dates between 1900 and 2010
+		if (yyyy < 1900 || yyyy > 2010)
+			throw new RuntimeException("Invalid date");
 	}
 	
 	public String toString(){

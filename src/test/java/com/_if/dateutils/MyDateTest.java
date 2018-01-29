@@ -21,10 +21,12 @@ public class MyDateTest {
 	@Test(expected = RuntimeException.class)
 	public void whenYearLessThan1900ExveptionIsThrown(){
 		MyDate date = new MyDate(1899, 1, 1);
+		date.toString(); //to avoid unused object warning
 	}
 	
 	@Test(expected = RuntimeException.class)
 	public void whenYearGreaterThan2010ExveptionIsThrown(){
 		MyDate date = new MyDate(2011, 1, 1);
+		date.toString(); //to avoid unused object warning
 	}
 }
