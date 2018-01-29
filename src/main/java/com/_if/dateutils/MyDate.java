@@ -12,6 +12,6 @@ public class MyDate {
 	}
 	
 	public String toString(){
-		return String.format("%d %d %d", dd, mm, yyyy);
+		return String.format("%02d %02d %d", dd, mm, yyyy);
 	}
 }
