@@ -17,4 +17,14 @@ public class MyDateTest {
 		MyDate date = new MyDate(2000, 9, 7);
 		Assert.assertEquals("07 09 2000", date.toString());
 	}
+	
+	@Test(expected = RuntimeException.class)
+	public void whenYearLessThan1900ExveptionIsThrown(){
+		MyDate date = new MyDate(1899, 1, 1);
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void whenYearGreaterThan2010ExveptionIsThrown(){
+		MyDate date = new MyDate(2011, 1, 1);
+	}
 }
