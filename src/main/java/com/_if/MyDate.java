@@ -28,6 +28,10 @@ public class MyDate {
 		instantiate(yyyy, mm, dd);
 	}
 	
+	/**
+	 * Accespts date as a string in DD MM YYYY format;
+	 * @param strDate the given date string
+	 */
 	public MyDate(String strDate){
 		if (!Pattern.matches("^[0-9]{2} [0-9]{2} [0-9]{4}$", strDate))
 			throw new RuntimeException(String.format("Invalid date: %s", strDate));

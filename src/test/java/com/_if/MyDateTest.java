@@ -69,4 +69,21 @@ public class MyDateTest {
 		date.toString(); //to avoid unused object warning
 	}
 
+	@Test
+	public void testConstructorWithInvalidStringParameter2(){
+		String input = "29021904";
+		exception.expect(RuntimeException.class);
+	    exception.expectMessage(String.format("Invalid date: %s", input));
+		MyDate date = new MyDate(input);
+		date.toString(); //to avoid unused object warning
+	}
+	
+	@Test
+	public void testConstructorWithInvalidStringParameter3(){
+		String input = "29 2 1904";
+		exception.expect(RuntimeException.class);
+	    exception.expectMessage(String.format("Invalid date: %s", input));
+		MyDate date = new MyDate(input);
+		date.toString(); //to avoid unused object warning
+	}
 }
