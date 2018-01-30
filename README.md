@@ -8,6 +8,7 @@ Project environment
 When in project directory  
 To run the unit tests  
 `mvn test`
+
 To run the application
 `mvn exec:java`
 
