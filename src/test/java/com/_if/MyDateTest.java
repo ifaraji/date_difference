@@ -1,12 +1,16 @@
 package com._if;
 
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import com._if.MyDate;
 
 import org.junit.Assert;
+import org.junit.Rule;
 
 public class MyDateTest {
+	@Rule
+	public ExpectedException exception = ExpectedException.none();
 	
 	@Test
 	public void testToString(){
@@ -56,4 +60,12 @@ public class MyDateTest {
 		Assert.assertEquals("29 02 1904", date.toString());
 	}
 	
+	@Test
+	public void testConstructorWithInvalidStringParameter(){
+		String input = "hbhssdcvus";
+		MyDate date = new MyDate(input);
+		date.toString(); //to avoid unused object warning
+		exception.expect(RuntimeException.class);
+	    exception.expectMessage(String.format("Invalid date: %s", input));
+	}
 }
