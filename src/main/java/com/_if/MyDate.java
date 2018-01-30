@@ -23,6 +23,17 @@ public class MyDate {
 	}
 
 	public MyDate(int yyyy, int mm, int dd){
+		instantiate(yyyy, mm, dd);
+	}
+	
+	public MyDate(String date){
+		String[] tokenized = date.split(" ");
+		instantiate(Integer.parseInt(tokenized[2]), 
+				Integer.parseInt(tokenized[1]), 
+				Integer.parseInt(tokenized[0])); 
+	}
+	
+	private void instantiate(int yyyy, int mm, int dd) {
 		tester = new DateTesterImpl();
 		if (tester.test(yyyy, mm, dd)){
 			this.yyyy = yyyy;
@@ -30,10 +41,6 @@ public class MyDate {
 			this.dd = dd;
 		} else 
 			throw new RuntimeException(String.format("Invalid date: %02d %02d %d", dd, mm, yyyy));
-	}
-	
-	public MyDate(String date){
-		
 	}
 	
 	public String toString(){
