@@ -32,6 +32,10 @@ public class MyDate {
 			throw new RuntimeException(String.format("Invalid date: %02d %02d %d", dd, mm, yyyy));
 	}
 	
+	public MyDate(String date){
+		
+	}
+	
 	public String toString(){
 		return String.format("%02d %02d %d", dd, mm, yyyy);
 	}
