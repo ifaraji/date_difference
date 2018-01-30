@@ -50,4 +50,10 @@ public class MyDateTest {
 		Assert.assertEquals("29 02 1904", date.toString());
 	}
 	
+	@Test
+	public void testConstructorWithStringParameter(){
+		MyDate date = new MyDate("29 02 1904");
+		Assert.assertEquals("29 02 1904", date.toString());
+	}
+	
 }
