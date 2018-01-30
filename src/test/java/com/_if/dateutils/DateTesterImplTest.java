@@ -37,4 +37,14 @@ public class DateTesterImplTest {
 	public void whenYear2010ReturnTrue(){
 		Assert.assertTrue(tester.test(2010, 1, 1));
 	}
+	
+	@Test
+	public void whenMonthGreaterThan12ReturnFalse(){
+		Assert.assertFalse(tester.test(2000, 13, 1));
+	}
+	
+	@Test
+	public void whenMonthLessThan1ReturnFalse(){
+		Assert.assertFalse(tester.test(2000, 0, 1));
+	}
 }
