@@ -5,6 +5,13 @@ import com._if.MyDate;
 public class DateDelta {
 	private final int BEGINING_OF_TIME = 1900;
 	
+	/**
+	 * Calculates the number of days from and including the start date
+	 * to, but not including the end date
+	 * @param date1 The given start date
+	 * @param date2 The given end date 
+	 * @return int number of days
+	 */
 	public int diffDays(MyDate date1, MyDate date2){
 		int diffDays1 = getDiffDaysFromTheBeginingOfTime(date1);
 		int diffDays2 = getDiffDaysFromTheBeginingOfTime(date2);
