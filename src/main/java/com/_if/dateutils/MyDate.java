@@ -7,6 +7,18 @@ public class MyDate {
 	
 	private DateTester tester;
 	
+	public int getYyyy() {
+		return yyyy;
+	}
+
+	public int getMm() {
+		return mm;
+	}
+
+	public int getDd() {
+		return dd;
+	}
+
 	public MyDate(int yyyy, int mm, int dd){
 		tester = new DateTesterImpl();
 		if (tester.test(yyyy, mm, dd)){
