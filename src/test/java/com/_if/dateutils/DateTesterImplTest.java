@@ -57,4 +57,47 @@ public class DateTesterImplTest {
 	public void whenDayLessThan1ReturnFalse(){
 		Assert.assertFalse(tester.test(2000, 5, 0));
 	}
+	
+	@Test
+	public void whenMonthDiffersSoDoesMaxDays(){
+		//JAN
+		Assert.assertTrue(tester.test(2000, 1, 31));
+		Assert.assertFalse(tester.test(2000, 1, 32));
+		//FEB, leap year
+		Assert.assertTrue(tester.test(2000, 2, 29));
+		Assert.assertFalse(tester.test(2000, 2, 30));
+		//FEB, non-leap year
+		Assert.assertTrue(tester.test(2001, 2, 28));
+		Assert.assertFalse(tester.test(2001, 2, 29));
+		//MAR
+		Assert.assertTrue(tester.test(2000, 3, 31));
+		Assert.assertFalse(tester.test(2000, 3, 32));
+		//APR
+		Assert.assertTrue(tester.test(2000, 4, 30));
+		Assert.assertFalse(tester.test(2000, 4, 31));
+		//MAY
+		Assert.assertTrue(tester.test(2000, 5, 31));
+		Assert.assertFalse(tester.test(2000, 5, 32));
+		//JUN
+		Assert.assertTrue(tester.test(2000, 6, 30));
+		Assert.assertFalse(tester.test(2000, 6, 31));
+		//JUL
+		Assert.assertTrue(tester.test(2000, 7, 31));
+		Assert.assertFalse(tester.test(2000, 7, 32));
+		//AUG
+		Assert.assertTrue(tester.test(2000, 8, 31));
+		Assert.assertFalse(tester.test(2000, 8, 32));
+		//SEP
+		Assert.assertTrue(tester.test(2000, 9, 30));
+		Assert.assertFalse(tester.test(2000, 9, 31));
+		//OCT
+		Assert.assertTrue(tester.test(2000, 1, 31));
+		Assert.assertFalse(tester.test(2000, 1, 32));
+		//NOV
+		Assert.assertTrue(tester.test(2000, 1, 30));
+		Assert.assertFalse(tester.test(2000, 1, 31));
+		//DEC
+		Assert.assertTrue(tester.test(2000, 1, 31));
+		Assert.assertFalse(tester.test(2000, 1, 32));
+	}
 }
