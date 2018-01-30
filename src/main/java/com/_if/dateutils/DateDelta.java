@@ -1,5 +1,7 @@
 package com._if.dateutils;
 
+import com._if.MyDate;
+
 public class DateDelta {
 	private final int BEGINING_OF_TIME = 1900;
 	

@@ -1,6 +1,8 @@
-package com._if.dateutils;
+package com._if;
 
 import org.junit.Test;
+
+import com._if.MyDate;
 
 import org.junit.Assert;
 

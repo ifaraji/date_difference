@@ -1,4 +1,7 @@
-package com._if.dateutils;
+package com._if;
+
+import com._if.dateutils.DateTester;
+import com._if.dateutils.DateTesterImpl;
 
 public class MyDate {
 	private int yyyy;
