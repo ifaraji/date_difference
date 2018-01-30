@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import com._if.dateutils.DateTester;
 import com._if.dateutils.DateTesterImpl;
 
-public class MyDate {
+public class MyDate implements Comparable<MyDate>{
 	private int yyyy;
 	private int mm;
 	private int dd;
@@ -53,5 +53,10 @@ public class MyDate {
 	
 	public String toString(){
 		return String.format("%02d %02d %d", dd, mm, yyyy);
+	}
+
+	public int compareTo(MyDate o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
