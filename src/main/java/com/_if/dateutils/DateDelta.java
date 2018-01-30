@@ -4,6 +4,7 @@ import com._if.MyDate;
 
 public class DateDelta {
 	private final int BEGINING_OF_TIME = 1900;
+	private final int[] DAYS = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 	
 	/**
 	 * Calculates the number of days from and including the start date
@@ -40,21 +41,10 @@ public class DateDelta {
 	}
 	
 	private int getMaxDaysForMonth(int month, int year){
-		switch(month){ 
-		case 1: return 31;
-		case 2: return isLeapYear(year) ? 29 : 28;
-		case 3: return 31;
-		case 4: return 30;
-		case 5: return 31;
-		case 6: return 30;
-		case 7: return 31;
-		case 8: return 31;
-		case 9: return 30;
-		case 10: return 31;
-		case 11: return 30;
-		case 12: return 31;
-		default: return 0;
-		}
+		int maxDays = DAYS[month];
+		if (month == 2 && isLeapYear(year))
+			maxDays++;
+		return maxDays;
 	}
 	
 	private boolean isLeapYear(int year) {
