@@ -5,13 +5,15 @@ public class MyDate {
 	private int mm;
 	private int dd;
 	
+	private DateTester tester;
+	
 	public MyDate(int yyyy, int mm, int dd){
-		this.yyyy = yyyy;
-		this.mm = mm;
-		this.dd = dd;
-		
-		//only accepting dates between 1900 and 2010
-		if (yyyy < 1900 || yyyy > 2010)
+		tester = new DateTesterImpl();
+		if (tester.test(yyyy, mm, dd)){
+			this.yyyy = yyyy;
+			this.mm = mm;
+			this.dd = dd;
+		} else 
 			throw new RuntimeException("Invalid date");
 	}
 	
