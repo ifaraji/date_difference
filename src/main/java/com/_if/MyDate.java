@@ -1,5 +1,7 @@
 package com._if;
 
+import java.util.regex.Pattern;
+
 import com._if.dateutils.DateTester;
 import com._if.dateutils.DateTesterImpl;
 
@@ -26,8 +28,10 @@ public class MyDate {
 		instantiate(yyyy, mm, dd);
 	}
 	
-	public MyDate(String date){
-		String[] tokenized = date.split(" ");
+	public MyDate(String strDate){
+		if (!Pattern.matches("^[0-9]{2} [0-9]{2} [0-9]{4}$", strDate))
+			throw new RuntimeException(String.format("Invalid date: %s", strDate));
+		String[] tokenized = strDate.split(" ");
 		instantiate(Integer.parseInt(tokenized[2]), 
 				Integer.parseInt(tokenized[1]), 
 				Integer.parseInt(tokenized[0])); 
