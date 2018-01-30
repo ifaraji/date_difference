@@ -19,14 +19,33 @@ public class MyDateTest {
 	}
 	
 	@Test(expected = RuntimeException.class)
-	public void whenYearLessThan1900ExveptionIsThrown(){
-		MyDate date = new MyDate(1899, 1, 1);
+	public void whenInvalidDateExceptionIsThrown(){
+		MyDate date = new MyDate(1899, 1, 1); //only years between 1900 and 2010 are accepted
 		date.toString(); //to avoid unused object warning
 	}
 	
 	@Test(expected = RuntimeException.class)
-	public void whenYearGreaterThan2010ExveptionIsThrown(){
-		MyDate date = new MyDate(2011, 1, 1);
+	public void whenInvalidDateExceptionIsThrown2(){
+		MyDate date = new MyDate(1900, 2, 29); //1900 was NOT a leap year
 		date.toString(); //to avoid unused object warning
 	}
+	
+	@Test(expected = RuntimeException.class)
+	public void whenInvalidDateExceptionIsThrown3(){
+		MyDate date = new MyDate(2007, 4, 31); //max days is 30 for April
+		date.toString(); //to avoid unused object warning
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void whenInvalidDateExceptionIsThrown4(){
+		MyDate date = new MyDate(2011, 1, 1); //only years between 1900 and 2010 are accepted
+		date.toString(); //to avoid unused object warning
+	}
+
+	@Test
+	public void whenValidDateThenNoExceptionIsThrown(){
+		MyDate date = new MyDate(1904, 2, 29); //1904 was a leap year
+		Assert.assertEquals("29 02 1904", date.toString());
+	}
+	
 }
