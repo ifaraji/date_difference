@@ -86,4 +86,25 @@ public class MyDateTest {
 		MyDate date = new MyDate(input);
 		date.toString(); //to avoid unused object warning
 	}
+	
+	@Test
+	public void testCompareTo(){
+		MyDate date1 = new MyDate(2000, 12, 31);
+		MyDate date2 = new MyDate(2001, 1, 1);
+		Assert.assertTrue(date1.compareTo(date2) < 0);
+	}
+	
+	@Test
+	public void testCompareTo1(){
+		MyDate date1 = new MyDate(2000, 12, 31);
+		MyDate date2 = new MyDate(2001, 1, 1);
+		Assert.assertTrue(date2.compareTo(date1) > 0);
+	}
+	
+	@Test
+	public void testCompareTo2(){
+		MyDate date1 = new MyDate(2000, 12, 31);
+		MyDate date2 = new MyDate(2000, 12, 31);
+		Assert.assertTrue(date1.compareTo(date2) == 0);
+	}
 }
