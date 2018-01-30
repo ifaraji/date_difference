@@ -91,13 +91,13 @@ public class DateTesterImplTest {
 		Assert.assertTrue(tester.test(2000, 9, 30));
 		Assert.assertFalse(tester.test(2000, 9, 31));
 		//OCT
-		Assert.assertTrue(tester.test(2000, 1, 31));
-		Assert.assertFalse(tester.test(2000, 1, 32));
+		Assert.assertTrue(tester.test(2000, 10, 31));
+		Assert.assertFalse(tester.test(2000, 10, 32));
 		//NOV
-		Assert.assertTrue(tester.test(2000, 1, 30));
-		Assert.assertFalse(tester.test(2000, 1, 31));
+		Assert.assertTrue(tester.test(2000, 11, 30));
+		Assert.assertFalse(tester.test(2000, 11, 31));
 		//DEC
-		Assert.assertTrue(tester.test(2000, 1, 31));
-		Assert.assertFalse(tester.test(2000, 1, 32));
+		Assert.assertTrue(tester.test(2000, 12, 31));
+		Assert.assertFalse(tester.test(2000, 12, 32));
 	}
 }
