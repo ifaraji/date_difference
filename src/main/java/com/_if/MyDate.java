@@ -56,7 +56,12 @@ public class MyDate implements Comparable<MyDate>{
 	}
 
 	public int compareTo(MyDate o) {
-		// TODO Auto-generated method stub
-		return 0;
+		if (this.yyyy  < o.yyyy)  return -1;
+        if (this.yyyy  > o.yyyy)  return +1;
+        if (this.mm < o.mm) return -1;
+        if (this.mm > o.mm) return +1;
+        if (this.dd   < o.dd)   return -1;
+        if (this.dd   > o.dd)   return +1;
+        return 0;
 	}
 }
