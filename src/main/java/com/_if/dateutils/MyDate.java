@@ -14,7 +14,7 @@ public class MyDate {
 			this.mm = mm;
 			this.dd = dd;
 		} else 
-			throw new RuntimeException("Invalid date");
+			throw new RuntimeException(String.format("Invalid date: %02d %02d %d", dd, mm, yyyy));
 	}
 	
 	public String toString(){
