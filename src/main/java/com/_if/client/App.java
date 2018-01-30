@@ -38,7 +38,10 @@ public class App {
 	}
 
 	private static void print(MyDate date1, MyDate date2, int diff) {
-		
+		if (date1.compareTo(date2) <= 0)
+			System.out.println(String.format("%s, %s, %d", date1, date2, Math.abs(diff)));
+		else
+			System.out.println(String.format("%s, %s, %d", date2, date1, Math.abs(diff)));
 		
 	}
 
